@@ -10,15 +10,15 @@ import sys
 sSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 sSock.setsockopt(socket.SOL_SOCKET, 25, b"pppoe-wan\0")
 sSock_b = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sSock_b.setsockopt(socket.SOL_SOCKET, 25, b"pppoe-WAN2\0")
+sSock_b.setsockopt(socket.SOL_SOCKET, 25, b"pppoe-wan2\0")
 cSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sSock.bind(("183.158.51.90", 21044))
-sSock_b.bind(("183.158.53.95", 21044))
-cSock.bind(("192.168.90.1", 31500))
+sSock.bind(("192.168.1.2", PORT3))
+sSock_b.bind(("192.168.1.3", PORT3))
+cSock.bind(("192.168.90.1", PORT2))
 if len(sys.argv) == 3:
     target = (sys.argv[1], int(sys.argv[2]))
 else:
-    target = ("192.168.90.102", 21043)
+    target = ("192.168.90.102", PORT1)
 remote_client = {}
 sendSock = [sSock, sSock_b]
 receive_data = Queue()

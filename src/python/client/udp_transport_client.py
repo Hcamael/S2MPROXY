@@ -8,9 +8,9 @@ import random
 
 sSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 cSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-sSock.bind(("0.0.0.0", 31500))
-cSock.bind(("0.0.0.0", 21043))
-target = [("183.158.51.90", 21044), ("183.158.53.95", 21044)]
+sSock.bind(("0.0.0.0", PORT1))
+cSock.bind(("0.0.0.0", PORT2))
+target = [("192.168.1.2", PORT3), ("192.168.1.3", PORT3)]
 c_target = None
 receive_data = Queue()
 send_data = Queue()
